@@ -135,7 +135,7 @@ G) Passez à une autre table (MAIS PAS UNE TABLE INTERMÉDIAIRE) de votre BD
 Dans le but de l'évaluation du module 164, chaque semaine, vous devez déposer votre travail (fichier zip du repository de votre Github) sur le moodle de l'EPSIC
  
   * Si vous ne pouvez pas avancer, vous DEVEZ vous entraider (votre groupe DISCORD est là pour cela)
-  * Je suis là pour vous aider, mais il faut que vous me posiez des questions, par mail cela parfaitement possible
+  * Je suis là pour vous aider, mais il faut que vous me posiez des questions, par mail, cela est parfaitement possible
   * Je vais observer votre avance sur votre github où vous avez défini mon adresse couriel officielle comme "collaborateur" à votre github
   * Réaliser un "COMMIT" avec un message qui indique votre avance en quelques mots
   * Réaliser un "PUSH" dans votre "GITHUB" privé, n'oubliez pas de m'inviter avec mon adresse officielle (déjà donnée)
