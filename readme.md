@@ -38,6 +38,8 @@ Le "début de la fin"
       * Une fenêtre s'ouvre, copier le lien suivant dans le champ url : https://github.com/info164/164_OM_PYTHON_MYSQL_FLASK_EX_2_V1.git
       * Il est indispensable de créer un répertoire vide pour accueillir MON projet de référence. Cliquer sur l'icône répertoire
       * Cliquer sur le bouton "CLONE"
+      * Une fenêtre de sécurité "Trust and open project"... cliquer sur "Trust"
+      * Laisser "PyCharm" créer un environnment virtuel, cliquer sur "Ok"
       * Lire et réaliser les étapes du mode d'emploi de la démonstration
 	
 ### Faire une copie du répertoire afin de pouvoir travailler sur une copie et non sur l'original.
@@ -51,7 +53,7 @@ Le "début de la fin"
 
 
 ## Situation 2 : Vous avez déjà commencé à remplacer mes requêtes par les vôtres depuis le 14.04 2022
-  * Cloner ma dernière version : https://github.com/info164/164_OM_PYTHON_MYSQL_FLASK_EX_2_V1.git
+  * Cloner (comme en situation 1) ma dernière version : https://github.com/info164/164_OM_PYTHON_MYSQL_FLASK_EX_2_V1.git
   * En faire une copie (voir plus haut)
   * Ouvrir votre projet que vous avez déjà commencé à modifier
   * Dans "PyCharm", cliquer avec le bouton droit de la souris sur le nom de la racine de votre projet et choisir "Compare With..." (CTRL-D", vous devez importer tout ce qui a changé dans la nouvelle version que je vous propose, mais ne pas écraser ce que vous avez déjà fait.
@@ -139,7 +141,8 @@ Dans le but de l'évaluation du module 164, chaque semaine, vous devez déposer 
   * Réaliser un "PUSH" dans votre "GITHUB" privé, n'oubliez pas de m'inviter avec mon adresse officielle (déjà donnée)
 
   * Dans votre github. Créer un fichier "zip" à télécharger sur votre disque local vous DEVEZ le déposer sur Moodle de l'EPSIC dans la semaine correspondante
-  * Il faut respecter mes consignes énoncées dans ce fichier "readme.md" et sur le MOODLE de l'EPSIC. Sinon, vous ne pourrez plus prétendre à l'excellence soit la note de "6"
+  * Le lien de votre github doit être dans un fichier "txt" que vous DEVEZ déposer sur Moodle de l'EPSIC dans la semaine correspondante
+  * Il faut respecter mes consignes énoncées dans ce fichier "readme.md" et sur le MOODLE de l'EPSIC. Sinon, vous ne pourrez plus prétendre à l'excellence, soit la note de "6"
     * Le but de ce module 164 est de faire un CRUD sur votre BD, pas de faire du code. Donc faites ce qui est demandé pas plus, ni moins
 
 
