@@ -1,7 +1,7 @@
 """
-    Fichier : gestion_genres_crud.py
+    Fichier : gestion_fournisseur_crud.py
     Auteur : OM 2021.03.16
-    Gestions des "routes" FLASK et des données pour les genres.
+    Gestions des "routes" FLASK et des données pour les fournisseur.
 """
 import sys
 
@@ -20,13 +20,13 @@ from APP_FILMS_164.essais_wtf_forms.wtf_forms_demo_select import DemoFormSelectW
     Auteur : OM 2021.04.08
     Définition d'une "route" /genre_delete
     
-    Test : ex. cliquer sur le menu "genres" puis cliquer sur le bouton "DELETE" d'un "genre"
+    Test : ex. cliquer sur le menu "fournisseur" puis cliquer sur le bouton "DELETE" d'un "genre"
     
     Paramètres : sans
     
-    But : Effacer(delete) un genre qui a été sélectionné dans le formulaire "genres_afficher.html"
+    But : Effacer(delete) un genre qui a été sélectionné dans le formulaire "fournisseur_afficher.html"
     
-    Remarque :  Dans le champ "nom_genre_delete_wtf" du formulaire "genres/genre_delete_wtf.html",
+    Remarque :  Dans le champ "nom_genre_delete_wtf" du formulaire "fournisseur/genre_delete_wtf.html",
                 le contrôle de la saisie est désactivée. On doit simplement cliquer sur "DELETE"
 """
 
@@ -34,24 +34,24 @@ from APP_FILMS_164.essais_wtf_forms.wtf_forms_demo_select import DemoFormSelectW
 @app.route("/demo_select_wtf", methods=['GET', 'POST'])
 def demo_select_wtf():
     genre_selectionne = None
-    # Objet formulaire pour montrer une liste déroulante basé sur la table "t_genre"
+    # Objet formulaire pour montrer une liste déroulante basé sur la table "t_fournisseur"
     form_demo = DemoFormSelectWTF()
     try:
         if request.method == "POST" and form_demo.submit_btn_ok_dplist_genre.data:
 
             if form_demo.submit_btn_ok_dplist_genre.data:
                 print("Genre sélectionné : ",
-                      form_demo.genres_dropdown_wtf.data)
-                genre_selectionne = form_demo.genres_dropdown_wtf.data
-                form_demo.genres_dropdown_wtf.choices = session['genre_val_list_dropdown']
+                      form_demo.fournisseur_dropdown_wtf.data)
+                genre_selectionne = form_demo.fournisseur_dropdown_wtf.data
+                form_demo.fournisseur_dropdown_wtf.choices = session['genre_val_list_dropdown']
 
         if request.method == "GET":
             with DBconnection() as mc_afficher:
-                strsql_genres_afficher = """SELECT id_genre, intitule_genre FROM t_genre ORDER BY id_genre ASC"""
-                mc_afficher.execute(strsql_genres_afficher)
+                strsql_fournisseur_afficher = """SELECT id_fournisseur, nom_fournisseur FROM t_fournisseur ORDER BY id_fournisseur ASC"""
+                mc_afficher.execute(strsql_fournisseur_afficher)
 
-            data_genres = mc_afficher.fetchall()
-            print("demo_select_wtf data_genres ", data_genres, " Type : ", type(data_genres))
+            data_fournisseur = mc_afficher.fetchall()
+            print("demo_select_wtf data_fournisseur ", data_fournisseur, " Type : ", type(data_fournisseur))
 
             """
                 Préparer les valeurs pour la liste déroulante de l'objet "form_demo"
@@ -59,19 +59,19 @@ def demo_select_wtf():
                 le formulaire qui utilise la liste déroulante "zzz_essais_om_104/demo_form_select_wtf.html"
             """
             genre_val_list_dropdown = []
-            for i in data_genres:
-                genre_val_list_dropdown.append(i['intitule_genre'])
+            for i in data_fournisseur:
+                genre_val_list_dropdown.append(i['nom_fournisseur'])
 
             # Aussi possible d'avoir un id numérique et un texte en correspondance
-            # genre_val_list_dropdown = [(i["id_genre"], i["intitule_genre"]) for i in data_genres]
+            # genre_val_list_dropdown = [(i["id_fournisseur"], i["nom_fournisseur"]) for i in data_fournisseur]
 
             print("genre_val_list_dropdown ", genre_val_list_dropdown)
 
-            form_demo.genres_dropdown_wtf.choices = genre_val_list_dropdown
+            form_demo.fournisseur_dropdown_wtf.choices = genre_val_list_dropdown
             session['genre_val_list_dropdown'] = genre_val_list_dropdown
             # Ceci est simplement une petite démo. on fixe la valeur PRESELECTIONNEE de la liste
-            form_demo.genres_dropdown_wtf.data = "philosophique"
-            genre_selectionne = form_demo.genres_dropdown_wtf.data
+            form_demo.fournisseur_dropdown_wtf.data = "philosophique"
+            genre_selectionne = form_demo.fournisseur_dropdown_wtf.data
             print("genre choisi dans la liste :", genre_selectionne)
             session['genre_selectionne_get'] = genre_selectionne
 
@@ -99,7 +99,7 @@ def demo_select_wtf():
     return render_template("zzz_essais_om_104/demo_form_select_wtf.html",
                            form=form_demo,
                            genre_selectionne=genre_selectionne,
-                           data_genres_drop_down=data_genres)
+                           data_fournisseur_drop_down=data_fournisseur)
 
 
 @app.route("/demo_select_dropdown_bootstrap", methods=['GET', 'POST'])

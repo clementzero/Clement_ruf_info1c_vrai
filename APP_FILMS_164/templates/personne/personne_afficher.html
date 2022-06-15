@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %} personne {% endblock %}
+{% block body %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<p>
+				personne à disposition.
+			</p>
+            <table class="table table-bordered table-sm">
+            {% if data %}
+                <thead>
+                    <tr>
+                        <th class="align-middle">
+                            id
+                        </th>
+                        <th class="align-middle">
+                            Nom
+                        </th>
+
+                        <th class="align-middle">
+                            Prenom
+                        </th>
+                        <th class="align-middle">
+                            Moral
+                        </th>
+
+                        <th class="align-middle">
+                            Physique
+                        </th>
+                    </tr>
+                </thead>
+            {% endif %}
+
+            {% for row in data %}
+				<tbody>
+					<tr>
+						<td class="align-middle">
+							{{ row.id_personne }}
+						</td>
+						<td class="align-middle">
+							{{ row.nom_personne }}
+						</td>
+
+						<td class="align-middle">
+							{{ row.prenom_personne }}
+						</td><td class="align-middle">
+							{{ row.moral_personne }}
+						</td>
+
+						<td class="align-middle">
+							{{ row.physique_personne }}
+						</td>
+						<td class="text-center" class="align-middle">
+							<a class="btn btn-primary" href="{{ url_for('personne_ajouter_wtf') }}" role="button">Ajouter</a>
+						</td>
+						<td class="text-center" class="align-middle">
+							<a class="btn btn-warning" href="{{ url_for('personne_update_wtf', id_personne_btn_edit_html=row.id_personne) }}" role="button">Edit</a>
+						</td>
+						<td class="text-center" class="align-middle">
+							<a class="btn btn-danger" href="{{ url_for('personne_delete_wtf', id_personne_btn_delete_html=row.id_personne) }}" role="button">Delete</a>
+						</td>
+					</tr>
+				</tbody>
+            {% else %}
+				<tbody>
+					<tr>
+						<td>
+							Aucune personne.
+						</td>
+						<td>
+							<a class="btn btn-primary" href="{{ url_for('personne_ajouter_wtf') }}" role="button">Ajouter</a>
+						</td>
+					</tr>
+				</tbody>
+            {% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}
+

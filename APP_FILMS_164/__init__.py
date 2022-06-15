@@ -41,14 +41,35 @@ try:
     from APP_FILMS_164.database import database_tools
     from APP_FILMS_164.essais_wtf_forms import gestion_essai_wtf
     from APP_FILMS_164.essais_wtf_forms import gestion_wtf_forms_demo_select
-    from APP_FILMS_164.genres import gestion_genres_crud
+
     from APP_FILMS_164.demos_om_164 import routes_demos
 
-    from APP_FILMS_164.films_genres import gestion_films_genres_crud
     from APP_FILMS_164.erreurs import msg_avertissements
 
-    from APP_FILMS_164.films import gestion_films_crud
-    from APP_FILMS_164.films import gestion_films_wtf_forms
+    from APP_FILMS_164.objet_fournisseur import gestion_objet_fournisseur_crud
+    from APP_FILMS_164.erreurs import msg_avertissements
+
+    from APP_FILMS_164.objet import gestion_objet_crud
+    from APP_FILMS_164.objet import gestion_objet_wtf_forms
+
+    from APP_FILMS_164.fournisseur import gestion_fournisseur_crud
+    from APP_FILMS_164.fournisseur import gestion_fournisseur_wtf_forms
+
+
+
+    from APP_FILMS_164.personne import gestion_personne_crud
+    from APP_FILMS_164.personne import gestion_personne_wtf_forms
+
+    from APP_FILMS_164.adresse import gestion_adresse_crud
+    from APP_FILMS_164.adresse import gestion_adresse_wtf_forms
+
+    from APP_FILMS_164.tel import gestion_tel_crud
+    from APP_FILMS_164.tel import gestion_tel_wtf_forms
+
+    from APP_FILMS_164.mail import gestion_mail_crud
+    from APP_FILMS_164.mail import gestion_mail_wtf_forms
+
+
 
 except Exception as Exception_init_app_films_164:
     print(f"4567756434 Une erreur est survenue {type(Exception_init_app_films_164)} dans"

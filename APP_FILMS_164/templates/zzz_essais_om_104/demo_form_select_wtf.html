@@ -2,7 +2,7 @@
 {% block title %} Demo liste déroulante (WTF) {% endblock %}
 {% block body %}
 <div class="container">
-    <h1>Démo d'une liste déroulante (WTForms) sur la table "t_genre".</h1>
+    <h1>Démo d'une liste déroulante (WTForms) sur la table "t_fournisseur".</h1>
     <p></p>
     <div class="alert alert-dismissible alert-info">
         <h4 class="alert-heading">Il ne faut pas utiliser ce système pour les tables intermédiaires avec plusieurs clés étrangères "fk_".
@@ -59,13 +59,13 @@
     <form action="" method="POST" novalidate>
         {{ form.hidden_tag() }}
         <p>
-            {{ form.genres_dropdown_wtf.label(class="form-control-label") }}<br>
-            {{ form.genres_dropdown_wtf(class="form-select-sm") }}
-            {% for error in form.genres_dropdown_wtf.errors %}
+            {{ form.fournisseur_dropdown_wtf.label(class="form-control-label") }}<br>
+            {{ form.fournisseur_dropdown_wtf(class="form-select-sm") }}
+            {% for error in form.fournisseur_dropdown_wtf.errors %}
                 <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
-        <p>Genre choisi : {{ form.genres_dropdown_wtf.data }}</p>
+        <p>Genre choisi : {{ form.fournisseur_dropdown_wtf.data }}</p>
         <p>{{ form.submit_btn_ok_dplist_genre(class="btn btn-primary") }}</p>
     </form>
 
@@ -84,8 +84,8 @@
     <p></p>
     <form action="{{ url_for('demo_select_dropdown_bootstrap') }}" method="POST" novalidate>
         <select name="ma_petite_liste_unique" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-            {% for row in data_genres_drop_down %}
-                <option value="{{ row.id_genre }}">{{ row.intitule_genre }}</option>
+            {% for row in data_fournisseur_drop_down %}
+                <option value="{{ row.id_fournisseur }}">{{ row.nom_fournisseur }}</option>
             {% endfor %}
         </select>
         <button type="submit" value="Submit">Choix</button>

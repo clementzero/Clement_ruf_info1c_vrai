@@ -1,5 +1,5 @@
 """
-    Fichier : gestion_genres_wtf_forms.py
+    Fichier : gestion_fournisseur_wtf_forms.py
     Auteur : OM 2021.03.22
     Gestion des formulaires avec WTF
 
@@ -38,18 +38,18 @@ class MonPremierWTForm(FlaskForm):
     Dans le formulaire "templates/zzz_essais_om_104/demo_form_select_wtf.html"
     Auteur : OM 2021.04.11
     
-    But : Montrer l'utilisation d'une liste déroulante (WTF) dont le contenu est basé sur la table "t_genre"
+    But : Montrer l'utilisation d'une liste déroulante (WTF) dont le contenu est basé sur la table "t_fournisseur"
     
 """
 
 
 class DemoFormSelectWTF(FlaskForm):
-    genres_dropdown_wtf = SelectField('Genres (liste déroulante)',
+    fournisseur_dropdown_wtf = SelectField('fournisseur (liste déroulante)',
                                       validators=[DataRequired(message="Sélectionner un genre.")],
                                       validate_choice=False
                                       )
     # Alternative qui correspond aux lignes en commentaires lignes 88 et 89 du "gestion_wtf_forms_demo_select.py"
-    # genres_dropdown_wtf = SelectField('Genres (liste déroulante)',
+    # fournisseur_dropdown_wtf = SelectField('fournisseur (liste déroulante)',
     #                                   validators=[DataRequired(message="Sélectionner un genre.")],
     #                                   validate_choice=False,
     #                                   coerce=int

@@ -1143,7 +1143,7 @@
       _this._touchSupported = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0;
       _this._pointerEvent = Boolean(window.PointerEvent);
 
-      _this._addEventListeners();
+      _this.EventListeners();
 
       return _this;
     } // Getters
@@ -1280,7 +1280,7 @@
       }
     };
 
-    _proto._addEventListeners = function _addEventListeners() {
+    _proto.EventListeners = function EventListeners() {
       var _this3 = this;
 
       if (this._config.keyboard) {
@@ -1299,11 +1299,11 @@
       }
 
       if (this._config.touch && this._touchSupported) {
-        this._addTouchEventListeners();
+        this.TouchEventListeners();
       }
     };
 
-    _proto._addTouchEventListeners = function _addTouchEventListeners() {
+    _proto.TouchEventListeners = function TouchEventListeners() {
       var _this4 = this;
 
       var start = function start(event) {
@@ -1716,7 +1716,7 @@
       _this._parent = _this._config.parent ? _this._getParent() : null;
 
       if (!_this._config.parent) {
-        _this._addAriaAndCollapsedClass(_this._element, _this._triggerArray);
+        _this.AriaAndCollapsedClass(_this._element, _this._triggerArray);
       }
 
       if (_this._config.toggle) {
@@ -1928,12 +1928,12 @@
       SelectorEngine.find(selector, parent).forEach(function (element) {
         var selected = getElementFromSelector(element);
 
-        _this4._addAriaAndCollapsedClass(selected, [element]);
+        _this4.AriaAndCollapsedClass(selected, [element]);
       });
       return parent;
     };
 
-    _proto._addAriaAndCollapsedClass = function _addAriaAndCollapsedClass(element, triggerArray) {
+    _proto.AriaAndCollapsedClass = function AriaAndCollapsedClass(element, triggerArray) {
       if (!element || !triggerArray.length) {
         return;
       }
@@ -2114,7 +2114,7 @@
       _this._menu = _this._getMenuElement();
       _this._inNavbar = _this._detectNavbar();
 
-      _this._addEventListeners();
+      _this.EventListeners();
 
       return _this;
     } // Getters
@@ -2259,7 +2259,7 @@
     } // Private
     ;
 
-    _proto._addEventListeners = function _addEventListeners() {
+    _proto.EventListeners = function EventListeners() {
       var _this2 = this;
 
       EventHandler.on(this._element, EVENT_CLICK, function (event) {
@@ -3501,7 +3501,7 @@
 
       var attachment = this._getAttachment(placement);
 
-      this._addAttachmentClass(attachment);
+      this.AttachmentClass(attachment);
 
       var container = this._getContainer();
 
@@ -3772,7 +3772,7 @@
       return _extends({}, defaultBsPopperConfig, typeof this.config.popperConfig === 'function' ? this.config.popperConfig(defaultBsPopperConfig) : this.config.popperConfig);
     };
 
-    _proto._addAttachmentClass = function _addAttachmentClass(attachment) {
+    _proto.AttachmentClass = function AttachmentClass(attachment) {
       this.getTipElement().classList.add(CLASS_PREFIX + "-" + this.updateAttachment(attachment));
     };
 
@@ -3986,7 +3986,7 @@
 
       this._cleanTipClass();
 
-      this._addAttachmentClass(this._getAttachment(state.placement));
+      this.AttachmentClass(this._getAttachment(state.placement));
     } // Static
     ;
 
@@ -4134,7 +4134,7 @@
     } // Private
     ;
 
-    _proto._addAttachmentClass = function _addAttachmentClass(attachment) {
+    _proto.AttachmentClass = function AttachmentClass(attachment) {
       this.getTipElement().classList.add(CLASS_PREFIX$1 + "-" + this.updateAttachment(attachment));
     };
 

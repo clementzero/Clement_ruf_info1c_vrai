@@ -79,44 +79,81 @@ class DatabaseException(Base):
     pass
 
 
-class ExceptionGenresAfficher(Base):
+class ExceptionobjetAfficher(Base):
+    pass
+class ExceptionobjetDeleteWtf(Base):
+    pass
+class ExceptionobjetUpdateWtf(Base):
+    pass
+class ExceptionobjetAjouterWtf(Base):
+    pass
+
+class ExceptionUpdatefournisseurobjetelected(Base):
+    pass
+class ExceptionobjetfournisseurAfficher(Base):
+    pass
+class ExceptionEditfournisseurobjetelected(Base):
+    pass
+class ExceptionfournisseurobjetAfficherData(Base):
     pass
 
 
-class ExceptionGenreDeleteWtf(Base):
+
+
+
+
+class ExceptiontelAfficher(Base):
+    pass
+class ExceptiontelDeleteWtf(Base):
+    pass
+class ExceptiontelUpdateWtf(Base):
+    pass
+class ExceptiontelAjouterWtf(Base):
+    pass
+
+class ExceptionmailAfficher(Base):
+    pass
+class ExceptionmailDeleteWtf(Base):
+    pass
+class ExceptionmailUpdateWtf(Base):
+    pass
+class ExceptionmailAjouterWtf(Base):
     pass
 
 
-class ExceptionGenreUpdateWtf(Base):
+class ExceptionfournisseurAfficher(Base):
+    pass
+class ExceptionfournisseurDeleteWtf(Base):
+    pass
+class ExceptionfournisseurUpdateWtf(Base):
+    pass
+class ExceptionfournisseurAjouterWtf(Base):
+    pass
+
+class ExceptionpersonneAfficher(Base):
+    pass
+class ExceptionpersonneDeleteWtf(Base):
+    pass
+class ExceptionpersonneUpdateWtf(Base):
+    pass
+class ExceptionpersonneAjouterWtf(Base):
+    pass
+
+class ExceptionadresseAfficher(Base):
+    pass
+class ExceptionadresseDeleteWtf(Base):
+    pass
+class ExceptionadresseUpdateWtf(Base):
+    pass
+class ExceptionadresseAjouterWtf(Base):
     pass
 
 
-class ExceptionGenresAjouterWtf(Base):
-    pass
 
 
-class ExceptionFilmsGenresAfficher(Base):
-    pass
 
 
-class ExceptionEditGenreFilmSelected(Base):
-    pass
 
-
-class ExceptionUpdateGenreFilmSelected(Base):
-    pass
-
-
-class ExceptionGenresFilmsAfficherData(Base):
-    pass
-
-
-class ExceptionFilmUpdateWtf(Base):
-    pass
-
-
-class ExceptionFilmDeleteWtf(Base):
-    pass
 
 
 class ExceptionInitAppFilms164(Base):
